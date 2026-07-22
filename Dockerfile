@@ -25,8 +25,16 @@ RUN cp .env.example .env || true
 # Generate APP_KEY
 RUN php artisan key:generate || true
 
+# ==========================
+# TAMBAHKAN BAGIAN INI
+# ==========================
+RUN mkdir -p storage/framework/cache \
+    && mkdir -p storage/framework/sessions \
+    && mkdir -p storage/framework/views \
+    && chmod -R 775 storage bootstrap/cache
+
 # Permission
-RUN chmod -R 775 storage bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache
 
 EXPOSE 80
 
