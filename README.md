@@ -66,8 +66,9 @@ Detail lengkap kolom & relasi ada di dokumen **PRD** (`PRD_Fitson_Muhammad_Fitri
 
 4. **Atur koneksi database** di file `.env`:
    ```env
--
+   -
    ```
+
 
 5. **Jalankan migrasi & seeder** (membuat tabel + akun admin default):
    ```bash
