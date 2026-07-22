@@ -66,12 +66,7 @@ Detail lengkap kolom & relasi ada di dokumen **PRD** (`PRD_Fitson_Muhammad_Fitri
 
 4. **Atur koneksi database** di file `.env`:
    ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=db_servicehp
-   DB_USERNAME=root
-   DB_PASSWORD=
+-
    ```
 
 5. **Jalankan migrasi & seeder** (membuat tabel + akun admin default):
