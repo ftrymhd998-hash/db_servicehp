@@ -16,17 +16,10 @@ RUN composer install --no-dev --optimize-autoloader
 RUN mkdir -p storage/framework/cache \
     storage/framework/sessions \
     storage/framework/views \
-    bootstrap/cache
-
-RUN chmod -R 775 storage bootstrap/cache
+    storage/logs \
+    bootstrap/cache \
+ && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
-CMD ["sh","-c","php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"]
-
-RUN mkdir -p storage/framework/cache \
-    && mkdir -p storage/framework/sessions \
-    && mkdir -p storage/framework/views \
-    && mkdir -p storage/logs \
-    && touch storage/logs/laravel.log \
-    && mkdir -p bootstrap/cache
+CMD php -S 0.0.0.0:${PORT:-8080} -t public
